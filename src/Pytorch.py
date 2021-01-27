@@ -15,14 +15,14 @@ learning_rate = 0.0001
 beta1 = 0.5    # ???
 beta2 = 0.999  # ???
 
-train_images = open('/Users/ezra/Downloads/train-images-idx3-ubyte','rb').read()[16:]
-train_labels = open('/Users/ezra/Downloads/train-labels-idx1-ubyte','rb').read()[8:]
+train_images = open('data/train-images-idx3-ubyte','rb').read()[16:]
+train_labels = open('data/train-labels-idx1-ubyte','rb').read()[8:]
 print('Received training data')
-test_images = open('/Users/ezra/Downloads/t10k-images-idx3-ubyte','rb').read()[16:]
-test_labels = open('/Users/ezra/Downloads/t10k-labels-idx1-ubyte','rb').read()[8:]
+test_images = open('data/t10k-images-idx3-ubyte','rb').read()[16:]
+test_labels = open('data/t10k-labels-idx1-ubyte','rb').read()[8:]
 print('Received test data')
 
-def create_image_tensor(images,size): #So pytorch just automatcially converts from binary string?
+def create_image_tensor(images,size): #So pytorch just automatcially converts from byte string?
     images_list = []
     for image in range(size):
         images_list.append([])
